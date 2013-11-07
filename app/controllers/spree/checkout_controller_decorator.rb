@@ -1,6 +1,6 @@
 Spree::CheckoutController.class_eval do
 
-  durably_decorate :update, mode: 'soft', sha: '681470fc5d42ee53a76d275755a0bc10a86fc5c1' do
+  durably_decorate :update , mode: 'soft' , sha: get_durably_sha( 'Spree::CheckoutController#update' ) do
     if @order.update_attributes(object_params)
       fire_event('spree.checkout.update')
 
